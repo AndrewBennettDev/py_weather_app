@@ -9,12 +9,17 @@ def get_current_weather(location: int) -> str:
       'X-RapidAPI-Host': "weatherapi-com.p.rapidapi.com"
   }
 
-  conn.request("GET", f"/current.json?q={location}", headers=headers)
+  try:
+    conn.request("GET", f"/current.json?q={location}", headers=headers)
+  except Exception as e:
+    print(f"Error occurred during call: {e}")
 
   res = conn.getresponse()
   data = res.read()
 
   print(data.decode("utf-8"))
+
+  conn.close()
 
 def get_astronomy(location: int) -> str:
   conn = http.client.HTTPSConnection("weatherapi-com.p.rapidapi.com")
@@ -24,12 +29,17 @@ def get_astronomy(location: int) -> str:
       'X-RapidAPI-Host': "weatherapi-com.p.rapidapi.com"
   }
 
-  conn.request("GET", f"/astronomy.json?q={location}", headers=headers)
+  try:
+    conn.request("GET", f"/astronomy.json?q={location}", headers=headers)
+  except Exception as e:
+    print(f"Error occurred during call: {e}")
 
   res = conn.getresponse()
   data = res.read()
 
   print(data.decode("utf-8"))
+
+  conn.close()
 
 def main():
   location = input("Enter Zip Code: ")
