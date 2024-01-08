@@ -5,7 +5,7 @@ def get_current_weather(location: int) -> str:
   conn = http.client.HTTPSConnection("weatherapi-com.p.rapidapi.com")
 
   headers = {
-      'X-RapidAPI-Key': "c9918a8ceamsh71bb6a68f0c1a2cp1fbbcbjsnda7ba6738dea",
+      'X-RapidAPI-Key': "your_key_here",
       'X-RapidAPI-Host': "weatherapi-com.p.rapidapi.com"
   }
 
@@ -25,7 +25,7 @@ def get_astronomy(location: int) -> str:
   conn = http.client.HTTPSConnection("weatherapi-com.p.rapidapi.com")
 
   headers = {
-      'X-RapidAPI-Key': "c9918a8ceamsh71bb6a68f0c1a2cp1fbbcbjsnda7ba6738dea",
+      'X-RapidAPI-Key': "your_key_here",
       'X-RapidAPI-Host': "weatherapi-com.p.rapidapi.com"
   }
 
